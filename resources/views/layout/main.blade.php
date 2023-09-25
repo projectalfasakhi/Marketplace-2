@@ -1,3 +1,5 @@
+<!DOCTYPE html >
+<html lang="en" class="wf-lato-n4-active wf-flaticon-n4-inactive wf-lato-n3-active wf-lato-n7-active wf-lato-n9-active wf-fontawesome5solid-n4-active wf-fontawesome5regular-n4-active wf-fontawesome5brands-n4-active wf-simplelineicons-n4-active wf-active">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +25,10 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../assets/css/demo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
 	<div class="wrapper overlay-sidebar">

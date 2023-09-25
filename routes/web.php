@@ -1,6 +1,18 @@
 <?php
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+=======
+
+  
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+
+  
+
+>>>>>>> 5c0c98b9d92150685efc6ab563a11d8169e5c2c0
 /*
 
 |--------------------------------------------------------------------------
@@ -20,18 +32,33 @@ use App\Http\Controllers\HomeController;
 |
 
 */
+<<<<<<< HEAD
+=======
+
+  
+
+>>>>>>> 5c0c98b9d92150685efc6ab563a11d8169e5c2c0
 Route::get('/', function () {
     return view('auth.login');
 });
-Route::get('/lope', function () {
+
+Route::get('lope', function () {
     return view('index');
 });
-
-Route::get('/tes', function () {
-    return view('percobaan');
-});
+Route::get('/', [ProductController::class, 'index']);  
+Route::get('cart', [ProductController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
+Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
 
 Auth::routes();
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 5c0c98b9d92150685efc6ab563a11d8169e5c2c0
 /*------------------------------------------
 
 --------------------------------------------
