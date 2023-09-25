@@ -1,7 +1,6 @@
 <div class="sidebar sidebar-style-2">
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
-         
             <ul class="nav nav-primary">
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
@@ -22,6 +21,22 @@
                                 </a>
                             </li>
                         </ul>
+                       <li class="nav-item">
+							<a data-toggle="collapse" href="#base">
+								<i class="fas fa-layer-group"></i>
+								<p>Data</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="base">
+								<ul class="nav nav-collapse">
+                                    <li>
+										<a href="components/avatars.html">
+											<span class="sub-item">Grafik Data</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
                     </div>
                 </li>
             </ul>

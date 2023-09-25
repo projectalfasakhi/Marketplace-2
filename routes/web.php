@@ -1,20 +1,6 @@
 <?php
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-=======
-
-
-
-use Illuminate\Support\Facades\Route;
-
-
-
-use App\Http\Controllers\HomeController;
-
-
-
->>>>>>> a6b95b478af15e95a5f25a7f8e1a834cd4241507
 /*
 
 |--------------------------------------------------------------------------
@@ -34,17 +20,15 @@ use App\Http\Controllers\HomeController;
 |
 
 */
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> a6b95b478af15e95a5f25a7f8e1a834cd4241507
 Route::get('/', function () {
     return view('auth.login');
 });
 Route::get('/lope', function () {
     return view('index');
+});
+
+Route::get('/tes', function () {
+    return view('percobaan');
 });
 
 Auth::routes();
@@ -62,7 +46,6 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
 
-  
 
 /*------------------------------------------
 
@@ -78,7 +61,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 });
 
-  
 
 /*------------------------------------------
 
