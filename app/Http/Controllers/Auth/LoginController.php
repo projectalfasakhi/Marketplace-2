@@ -31,11 +31,11 @@ class LoginController extends Controller
 
     */
 
-  
+
 
     use AuthenticatesUsers;
 
-  
+
 
     /**
 
@@ -49,7 +49,7 @@ class LoginController extends Controller
 
     protected $redirectTo = RouteServiceProvider::HOME;
 
-  
+
 
     /**
 
@@ -69,7 +69,7 @@ class LoginController extends Controller
 
     }
 
-    
+
 
     /**
 
@@ -83,11 +83,11 @@ class LoginController extends Controller
 
     public function login(Request $request): RedirectResponse
 
-    {   
+    {
 
         $input = $request->all();
 
-     
+
 
         $this->validate($request, [
 
@@ -97,7 +97,7 @@ class LoginController extends Controller
 
         ]);
 
-     
+
 
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
 
@@ -113,7 +113,7 @@ class LoginController extends Controller
 
             }else{
 
-                return redirect()->route('home');
+                return redirect()->route('lope');
 
             }
 
@@ -125,7 +125,7 @@ class LoginController extends Controller
 
         }
 
-          
+
 
     }
 
