@@ -1,6 +1,20 @@
 <?php
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+=======
+
+
+
+use Illuminate\Support\Facades\Route;
+
+
+
+use App\Http\Controllers\HomeController;
+
+
+
+>>>>>>> a6b95b478af15e95a5f25a7f8e1a834cd4241507
 /*
 
 |--------------------------------------------------------------------------
@@ -20,8 +34,17 @@ use App\Http\Controllers\HomeController;
 |
 
 */
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> a6b95b478af15e95a5f25a7f8e1a834cd4241507
 Route::get('/', function () {
     return view('auth.login');
+});
+Route::get('/lope', function () {
+    return view('index');
 });
 
 Auth::routes();
