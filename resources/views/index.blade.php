@@ -31,7 +31,7 @@
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
-{{-- <div class="row">
+<div class="row">
     @foreach($products as $product)
         <div class="col-xs-18 col-sm-6 col-md-3">
             <div class="thumbnail">
@@ -45,5 +45,5 @@
             </div>
         </div>
     @endforeach
-</div> --}}
+</div>
 @endsection

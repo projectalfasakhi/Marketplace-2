@@ -12,9 +12,9 @@
         </button>
         <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
         <div class="nav-toggle">
-            {{-- <button class="btn btn-toggle sidenav-overlay-toggler">
+            <button class="btn btn-toggle sidenav-overlay-toggler">
                 <i class="icon-menu"></i>
-            </button> --}}
+            </button>
         </div>
     </div>
     <!-- End Logo Header -->
