@@ -37,7 +37,6 @@ Route::get('/', function () {
 Route::get('lope', function () {
     return view('index');
 });
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/', [ProductController::class, 'index']);  
 Route::get('cart', [ProductController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
@@ -47,7 +46,7 @@ Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('r
 Auth::routes();
 
 
-  
+
 
 /*------------------------------------------
 
@@ -60,12 +59,10 @@ All Normal Users Routes List
 --------------------------------------------*/
 
 Route::middleware(['auth', 'user-access:user'])->group(function () {
-
-
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 });
 
-  
 
 /*------------------------------------------
 
@@ -79,13 +76,11 @@ All Admin Routes List
 
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
-  
 
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 
 });
 
-  
 
 /*------------------------------------------
 
@@ -99,8 +94,11 @@ All Admin Routes List
 
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
 
-  
+
 
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
 
 });
+
+
+

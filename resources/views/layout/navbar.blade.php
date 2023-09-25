@@ -203,7 +203,7 @@
             </li>
             <li class="nav-item dropdown hidden-caret">
                 <div class="dropdown">
-                    <button type="button" class="btn btn-info" data-toggle="dropdown">
+                    <button type="button" class="btn btn-primary" data-toggle="dropdown">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                     </button>
                     <div class="dropdown-menu">
@@ -252,7 +252,7 @@
                             <div class="user-box">
                                 <div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
                                 <div class="u-text">
-                                    <h4>Hizrian</h4>
+                                    <h4> {{ Auth::user()->name }}</h4>
                                     <p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
                                 </div>
                             </div>

@@ -1,15 +1,79 @@
 @extends('layout.main')
 @section('content')
-<div class="panel-header bg-primary-gradient">
-    <div class="page-inner py-5">
-        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-            <div>
-                <h2 class="text-white pb-2 fw-bold">Dashboard</h2>
-                <h5 class="text-white op-7 mb-2">Premium Bootstrap 4 Admin Dashboard</h5>
+<div class="row row-card-no-pd mt--2">
+    <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-round">
+            <div class="card-body ">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="icon-big text-center">
+                            <i class="flaticon-chart-pie text-warning"></i>
+                        </div>
+                    </div>
+                    <div class="col-7 col-stats">
+                        <div class="numbers">
+                            <p class="card-category">Number</p>
+                            <h4 class="card-title">150GB</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="ml-md-auto py-2 py-md-0">
-                <a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>
-                <a href="#" class="btn btn-secondary btn-round">Add Customer</a>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-round">
+            <div class="card-body ">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="icon-big text-center">
+                            <i class="flaticon-coins text-success"></i>
+                        </div>
+                    </div>
+                    <div class="col-7 col-stats">
+                        <div class="numbers">
+                            <p class="card-category">Revenue</p>
+                            <h4 class="card-title">$ 1,345</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="icon-big text-center">
+                            <i class="flaticon-error text-danger"></i>
+                        </div>
+                    </div>
+                    <div class="col-7 col-stats">
+                        <div class="numbers">
+                            <p class="card-category">Errors</p>
+                            <h4 class="card-title">23</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="icon-big text-center">
+                            <i class="flaticon-twitter text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="col-7 col-stats">
+                        <div class="numbers">
+                            <p class="card-category">Followers</p>
+                            <h4 class="card-title">+45K</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -24,26 +88,23 @@
   
 <br/>
 <div class="card">
-  <h5 class="card-header">Featured</h5>
+  <h5 class="card-header">Product</h5>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="row">
+          @foreach($products as $product)
+              <div class="col-xs-18 col-sm-6 col-md-3">
+                  <div class="thumbnail">
+                      <img src="{{ $product->image }}" alt="">
+                      <div class="caption">
+                          <h4>{{ $product->name }}</h4>
+                          <p>{{ $product->description }}</p>
+                          <p><strong>Price: </strong> {{ $product->price }}$</p>
+                          <p class="btn-holder"><a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p>
+                      </div>
+                  </div>
+              </div>
+          @endforeach
+      </div>
   </div>
-</div>
-<div class="row">
-    @foreach($products as $product)
-        <div class="col-xs-18 col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="{{ $product->image }}" alt="">
-                <div class="caption">
-                    <h4>{{ $product->name }}</h4>
-                    <p>{{ $product->description }}</p>
-                    <p><strong>Price: </strong> {{ $product->price }}$</p>
-                    <p class="btn-holder"><a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p>
-                </div>
-            </div>
-        </div>
-    @endforeach
 </div>
 @endsection
