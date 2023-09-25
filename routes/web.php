@@ -3,10 +3,8 @@
   
 
 use Illuminate\Support\Facades\Route;
-
-  
-
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 
   
 
@@ -36,7 +34,18 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('lope', function () {
+    return view('index');
+});
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [ProductController::class, 'index']);  
+Route::get('cart', [ProductController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
+Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
+
 Auth::routes();
+
 
   
 
@@ -52,9 +61,7 @@ All Normal Users Routes List
 
 Route::middleware(['auth', 'user-access:user'])->group(function () {
 
-  
 
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 });
 

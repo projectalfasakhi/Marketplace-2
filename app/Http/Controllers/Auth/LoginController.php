@@ -113,7 +113,7 @@ class LoginController extends Controller
 
             }else{
 
-                return redirect()->route('home');
+                return redirect()->route('index');
 
             }
 
